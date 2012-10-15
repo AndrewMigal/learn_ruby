@@ -3,12 +3,7 @@ class Book
 
   def title
     bad_words = %w(and over the in of a an)
-    c         = []
-    @title.split(' ').each do |w|
-      bad_words.include?(w) ? c.push(w) : c.push(w.capitalize)
-    end
-    c[0].capitalize!
-    c.join(' ')
+    @title.capitalize.split.inject { |r, e| r + " " + (bad_words.include?(e) ? e : e.capitalize) }
   end
 
 end
