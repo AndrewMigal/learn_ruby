@@ -12,19 +12,11 @@ class Temperature
   end
 
   def in_fahrenheit
-    if @celsius.nil?
-      @fahrenheit
-    else
-      @fahrenheit = @celsius * 9.0 / 5.0 + 32
-    end
+    @celsius.nil? ? @fahrenheit : @fahrenheit = @celsius * 9.0 / 5.0 + 32
   end
 
   def in_celsius
-    if @fahrenheit.nil?
-      @celsius
-    else
-      @celsius = (@fahrenheit - 32) * 5 / 9
-    end
+    @fahrenheit.nil? ? @celsius : @celsius = (@fahrenheit - 32) * 5 / 9
   end
 end
 
