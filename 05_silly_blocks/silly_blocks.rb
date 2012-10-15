@@ -3,11 +3,11 @@ def reverser(&b)
   str.split.map { |word| word.reverse }.join(' ')
 end
 
-def adder(n=1)
+def adder(n = 1)
   yield + n
 end
 
-def repeater(n=1)
+def repeater(n = 1)
   n.times { yield }
 end
 
