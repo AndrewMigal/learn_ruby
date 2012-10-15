@@ -1,10 +1,10 @@
-def measure(n=1)
-  t = 0
-  n.times do
-    a = Time.now()
+def measure(number = 1)
+  time_interval = 0
+  number.times do
+    time_before = Time.now()
     yield
-    b = Time.now()
-    t += b - a
+    time_after = Time.now()
+    time_interval += time_after - time_before
   end
-  t / n
+  time_interval / number
 end
