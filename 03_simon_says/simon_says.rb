@@ -21,7 +21,7 @@ end
 def titleize(s)
   bad_words = %w(and over the in of)
   c = []
-  s.split(" ").each do |w|
+  s.split(' ').each do |w|
     bad_words.include?(w) ? c.push(w) : c.push(w.capitalize!)
   end
   c[0].capitalize!
