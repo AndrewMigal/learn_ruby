@@ -1,41 +1,40 @@
 class Dictionary
-	def initialize
-		@entries = Hash.new {}
-	end
-	attr_accessor :entries
-	
+  def initialize
+    @entries = Hash.new {}
+  end
 
-	def add(some_hash)
-		if some_hash.is_a?(Hash) then
-			@entries.merge!(some_hash)
-		end
-		if some_hash.is_a?(String) then
-			@entries.merge!(some_hash => nil)
-		end
-	end
+  attr_accessor :entries
 
-	def keywords
-		@entries.keys.sort
-	end
+  def add(some_hash)
+    if some_hash.is_a?(Hash) then
+      @entries.merge!(some_hash)
+    end
+    if some_hash.is_a?(String) then
+      @entries.merge!(some_hash => nil)
+    end
+  end
 
-	def include?(h)
-		@entries.has_key?(h)
-	end
+  def keywords
+    @entries.keys.sort
+  end
 
-	def find(w)
-		res = {}
-		@entries.each do | k, v|
-			# if k =~ /w/ then
-			if k.include?(w) then	
-				res.merge!(k => v)
-			end
-		end	
-		res
-	end
+  def include?(h)
+    @entries.has_key?(h)
+  end
 
-	def printable
-		prnt = []
-		@entries.each {| k, v| prnt.push("[#{k}]" " \"#{v}"'"')}
-		prnt.sort!.join("\n")
-	end
+  def find(w)
+    res = {}
+    @entries.each do |k, v|
+      if k.include?(w)
+        res.merge!(k => v)
+      end
+    end
+    res
+  end
+
+  def printable
+    prnt = []
+    @entries.each { |k, v| prnt.push("[#{k}]" " \"#{v}" '"') }
+    prnt.sort!.join("\n")
+  end
 end
