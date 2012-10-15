@@ -19,11 +19,5 @@ def first_word(s)
 end
 
 def titleize(s)
-  bad_words = %w(and over the in of)
-  c = []
-  s.split(' ').each do |w|
-    bad_words.include?(w) ? c.push(w) : c.push(w.capitalize!)
-  end
-  c[0].capitalize!
-  c.join(' ')
+  s.capitalize.split.inject { |r, e| r + " " + (%w(and over the in of).include?(e) ? e : e.capitalize) }
 end
