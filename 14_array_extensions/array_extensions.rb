@@ -8,4 +8,7 @@ class Array
     self.map { |item| item**2 }
   end
 
+  def square!
+    self.map! { |item| item**2 }
+  end
 end
