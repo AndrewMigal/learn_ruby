@@ -7,7 +7,7 @@ def shout(x)
 end
 
 def repeat(str, count=2)
-  ((str << ' ')*count).chop
+  ((str << ' ') * count).chop
 end
 
 def start_of_word(w, n)
