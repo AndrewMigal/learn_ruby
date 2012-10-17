@@ -1,9 +1,7 @@
 class XmlDocument
 
   def method_missing(method, *args, &block)
-    if block_given?
-      return "<#{method}>" + block.call + "</#{method}>"
-    end
+    return "<#{method}>" + block.call + "</#{method}>" if block_given?
     str = ''
     if args[0].nil?
       return "<#{method}/>"
