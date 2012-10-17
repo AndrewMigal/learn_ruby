@@ -6,10 +6,10 @@ class Dictionary
   attr_accessor :entries
 
   def add(some_hash)
-    if some_hash.is_a?(Hash) then
+    if some_hash.is_a?(Hash)
       @entries.merge!(some_hash)
     end
-    if some_hash.is_a?(String) then
+    if some_hash.is_a?(String)
       @entries.merge!(some_hash => nil)
     end
   end
